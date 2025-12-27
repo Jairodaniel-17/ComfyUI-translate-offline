@@ -1,0 +1,4 @@
+torch
+optimum[onnxruntime]
+transformers
+nltk
