@@ -28,7 +28,7 @@ Documentation = "https://github.com/Jairodaniel-17/ComfyUI-translate-offline/wik
 "Bug Tracker" = "https://github.com/Jairodaniel-17/ComfyUI-translate-offline/issues"
 
 [tool.comfy]
-PublisherId = "Jairodaniel-17"
+PublisherId = "jairomt28"
 DisplayName = "ComfyUI-translate-offline"
 Icon = ""
 includes = [] 
