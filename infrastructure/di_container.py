@@ -1,3 +1,20 @@
+import os
+import sys
+
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
+
+for pkg in ("application", "domain"):
+    loaded_pkg = sys.modules.get(pkg)
+    if loaded_pkg is None:
+        continue
+    pkg_path = getattr(loaded_pkg, "__file__", "") or ""
+    if not pkg_path.startswith(ROOT_DIR):
+        for name in list(sys.modules):
+            if name == pkg or name.startswith(f"{pkg}."):
+                del sys.modules[name]
+
 # Contenedor simple: mapea pares de idiomas a modelos y provee translation_usecase
 from application.translation_usecase import TranslationUseCase
 from domain.translation_service import TranslationService
